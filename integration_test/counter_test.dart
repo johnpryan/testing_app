@@ -47,6 +47,9 @@ void main() {
       (WidgetTester tester) async {
     app.main();
 
+    // Trace the timeline of the following operation. The timeline result will
+    // be written to `build/integration_response_data.json` with the key
+    // `timeline`.
     await binding.traceAction(() async {
       await tester.pumpAndSettle();
 
@@ -57,6 +60,6 @@ void main() {
       expect(find.text('0'), findsNothing);
       expect(find.text('1'), findsOneWidget);
 
-    });
+    }, reportKey: 'counter perf test');
   });
 }
