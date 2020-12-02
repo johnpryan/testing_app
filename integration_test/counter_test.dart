@@ -7,10 +7,10 @@ void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized()
       as IntegrationTestWidgetsFlutterBinding;
 
-  testWidgets("passing test example", (WidgetTester tester) async {
+  testWidgets("failing test example", (WidgetTester tester) async {
     app.main();
 
-    expect(2 + 2, equals(4));
+    expect(2 + 2, equals(5));
   });
 
   testWidgets("take a screenshot", (WidgetTester tester) async {
